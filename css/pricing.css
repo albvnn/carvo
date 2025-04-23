@@ -1,0 +1,131 @@
+/* Header for pricing page */
+.pricing-header {
+    background-color: #047857;
+    position: relative;
+}
+
+.pricing-header .logo img {
+    filter: brightness(0) invert(1);
+}
+
+/* Pricing section */
+.pricing {
+    padding: 2rem 0 5rem;
+}
+
+.pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.pricing-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.price-period {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+.features-list li::before {
+    content: "✓";
+    color: #2e7d32;
+    margin-right: 0.5rem;
+}
+
+.select-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+}
+
+.select-button:hover {
+    background-color: #1b5e20;
+}
+
+/* Highlight card - Pro */
+.pricing-card.highlight {
+    transform: scale(1.05);
+    border: 2px solid #2e7d32;
+}
+
+.pricing-card.highlight .card-header {
+    background-color: #f0f7f0;
+}
+
+.pricing-card.highlight:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .pricing-card {
+        margin-bottom: 2rem;
+    }
+    
+    .pricing-card.highlight {
+        transform: none;
+    }
+    
+    .pricing-card.highlight:hover {
+        transform: translateY(-5px);
+    }
+} 

@@ -1,0 +1,114 @@
+/* Header for about page */
+.about-header {
+    background-color: #047857;
+    position: relative;
+}
+
+.about-header .logo img {
+    filter: brightness(0) invert(1);
+}
+
+/* About section */
+.about-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.about-section h2 {
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+}
+
+.about-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Team section */
+.team-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.team-section h2 {
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.team-member {
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #2e7d32;
+}
+
+.team-member h3 {
+    margin-bottom: 0.5rem;
+    color: #2e7d32;
+}
+
+.team-member p {
+    color: #666;
+}
+
+/* Sustainability section */
+.sustainability-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 3rem;
+    margin-bottom: 5rem;
+}
+
+.sustainability-section h2 {
+    color: #2e7d32;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+}
+
+.sustainability-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.sdg-goals {
+    background-color: #f0f7f0;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+}
+
+.sdg-goals h3 {
+    margin-bottom: 1rem;
+    color: #2e7d32;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .about-section,
+    .team-section,
+    .sustainability-section {
+        padding: 2rem;
+    }
+} 
