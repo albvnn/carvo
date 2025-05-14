@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/about.css">
 </head>
-<body>
-    <!-- Header with navigation -->
-    <header class="about-header">
+<body class="inner-page">
+    <header>
         <div class="container header-content">
             <div class="logo-container">
                 <a href="index.html" class="logo">
-                    <img src="images/carvo-logo.svg" alt="Carvo">
+                    <img src="assets/images/carvo-logo-black.svg" alt="Carvo">
                 </a>
             </div>
+            <input type="checkbox" id="mobile-menu-checkbox">
+            <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="nav-container">
                 <nav>
                     <ul>
-                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="features.html">Features</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                         <li><a href="about.html">About Us</a></li>
                     </ul>
@@ -63,23 +68,16 @@
             <div class="team-grid">
                 <!-- Team Member 1 -->
                 <div class="team-member">
-                    <img src="images/team-member1.jpg" alt="Team Member 1">
-                    <h3>John Doe</h3>
-                    <p>Frontend Development</p>
+                    <img src="assets/images/photo_alban.png" alt="Photo of Alban Pascal">
+                    <h3>Alban Pascal</h3>
+                    <p>Frontend Development (HTML, CSS, JavaScript)</p>
                 </div>
                 
                 <!-- Team Member 2 -->
                 <div class="team-member">
-                    <img src="images/team-member2.jpg" alt="Team Member 2">
-                    <h3>Jane Smith</h3>
-                    <p>Content and Research</p>
-                </div>
-                
-                <!-- Team Member 3 -->
-                <div class="team-member">
-                    <img src="images/team-member3.jpg" alt="Team Member 3">
-                    <h3>Alex Johnson</h3>
-                    <p>Design and UX</p>
+                    <img src="assets/images/photo_maxime.png" alt="Photo of Maxime Colin">
+                    <h3>Maxime Colin</h3>
+                    <p>Content & Design Development (CSS)</p>
                 </div>
             </div>
         </section>
@@ -110,13 +108,16 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
-            <div class="copyright">
-                &copy; 2024 Carvo. All rights reserved.
+        <div class="container footer-content stunning-footer">
+            <div class="footer-logo-gradient">
+                <span class="carvo-gradient-text">CARVO</span>
             </div>
             <div class="footer-links">
                 <a href="about.html">About Us</a>
                 <a href="index.html">Home</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Carvo. All rights reserved.
             </div>
         </div>
     </footer>

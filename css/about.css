@@ -1,13 +1,3 @@
-/* Header for about page */
-.about-header {
-    background-color: #047857;
-    position: relative;
-}
-
-.about-header .logo img {
-    filter: brightness(0) invert(1);
-}
-
 /* About section */
 .about-section {
     background-color: white;
