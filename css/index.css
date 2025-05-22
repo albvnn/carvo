@@ -98,9 +98,7 @@
 }
 
 .cta-button:hover {
-    background: linear-gradient(45deg, #036c4e, #047857);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(4, 120, 87, 0.4);
 }
 
 /* Trusted by section */
@@ -197,6 +195,7 @@
 
 .dashboard-preview .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     position: relative;
 }
@@ -207,11 +206,9 @@
 }
 
 .dashboard-image-container {
-    position: relative;
-    width: 45%;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .dashboard-image {
@@ -220,11 +217,97 @@
 }
 
 .dashboard-preview-content {
-    width: 50%;
-    padding-right: 5%;
+    width: 100%;
+    max-width: 600px;
+    padding-right: 0;
+    margin-bottom: 2.5rem;
+    text-align: center;
 }
 
-/* Responsive styles */
+/* Dashboard Demo Bubbles */
+.dashboard-bubble {
+  position: absolute;
+  z-index: 2;
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px rgba(16,185,129,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 2.5px solid #fff;
+  user-select: none;
+  text-align: center;
+  white-space: pre-line;
+}
+.dashboard-bubble:hover {
+  transform: scale(1.13);
+  box-shadow: 0 0 0 6px rgba(16,185,129,0.10), 0 8px 32px rgba(16,185,129,0.18);
+}
+
+.dashboard-feature-explainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  min-width: 260px;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(44,83,100,0.18);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  z-index: 10;
+  display: none;
+  animation: explainer-fadein 0.22s cubic-bezier(.4,1.4,.6,1) 1;
+}
+.dashboard-feature-explainer.active {
+  display: block;
+}
+.explainer-content {
+  position: relative;
+}
+.explainer-content h3 {
+  font-size: 1.3rem;
+  color: #047857;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+.explainer-content p {
+  color: #374151;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+.explainer-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(16,185,129,0.10);
+  transition: background 0.18s;
+  z-index: 2;
+}
+.explainer-close:hover {
+  background: #047857;
+}
+@keyframes explainer-fadein {
+  from { opacity: 0; transform: translate(-50%, -80%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -60%) scale(1); }
+}
+
 @media (max-width: 768px) {
     .hero-container {
         height: auto;
@@ -310,4 +393,33 @@
         margin-bottom: 2rem;
         text-align: center;
     }
+}
+
+@media (max-width: 900px) {
+  .dashboard-bubble {
+    width: 38px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
+  .dashboard-feature-explainer {
+    min-width: 180px;
+    max-width: 90vw;
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .explainer-content h3 {
+    font-size: 1.05rem;
+  }
+  .explainer-close {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
+    top: -12px;
+    right: -12px;
+  }
+  .dashboard-preview-content {
+    margin-bottom: 1.5rem;
+  }
+  .dashboard-image-container {
+    max-width: 100vw;
+  }
 } 

@@ -1,0 +1,112 @@
+/* Features Page Styles */
+/* Removed all shared feature/hero/footer styles now in styles.css. Only keep page-specific overrides here. */
+.features-list-section {
+  background: #f7fbff;
+  padding: 48px 0;
+}
+.features-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+.stunning-feature-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,114,255,0.07);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.stunning-feature-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0,114,255,0.15);
+}
+.stunning-feature-card .feature-icon {
+  font-size: 2.5rem;
+  color: #00c6ff;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 2px 8px rgba(0,198,255,0.10));
+}
+.stunning-feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c5364;
+}
+.stunning-feature-card p {
+  color: #4a6fa1;
+  font-size: 1.05rem;
+}
+@media (max-width: 600px) {
+  .features-list-grid {
+    gap: 16px;
+  }
+  .stunning-feature-card {
+    padding: 20px 10px;
+  }
+}
+
+/* Alternating Features Section Styles */
+.features-list-section-alt {
+  background: #f7fbff;
+  padding: 48px 0;
+}
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 64px;
+  gap: 48px;
+}
+.feature-row:last-child {
+  margin-bottom: 0;
+}
+.feature-row.reverse {
+  flex-direction: row-reverse;
+}
+.feature-text {
+  flex: 1 1 50%;
+  max-width: 520px;
+}
+.feature-text h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #047857;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.feature-text p {
+  color: #374151;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.feature-image {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-image img {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(16,185,129,0.10);
+  background: #fff;
+}
+@media (max-width: 1000px) {
+  .feature-row, .feature-row.reverse {
+    flex-direction: column !important;
+    gap: 24px;
+    text-align: center;
+  }
+  .feature-text, .feature-image {
+    max-width: 100%;
+  }
+  .feature-image img {
+    max-width: 90vw;
+  }
+} 
