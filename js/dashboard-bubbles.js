@@ -1,6 +1,5 @@
-// Dashboard Bubbles Interactivity
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function(event) {
   const bubbles = document.querySelectorAll('.dashboard-bubble');
   const explainer = document.getElementById('dashboard-feature-explainer');
   const featureDescriptions = {
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Close on click outside or on close button
   document.addEventListener('click', function() {
     if (explainer.style.display === 'block') {
       explainer.style.display = 'none';

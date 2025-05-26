@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSeamlessScroll();
     
     if (carousel instanceof HTMLElement) {
-        const speed = 2; // seconds per logo (adjust for faster/slower)
+        const speed = 2; 
         const totalDuration = logos.length * speed;
         carousel.style.animationDuration = `${totalDuration}s`;
     }

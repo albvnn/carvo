@@ -1,4 +1,3 @@
-// Simple confetti animation for plan selection
 function launchConfetti() {
   const confettiCanvas = document.createElement('canvas');
   confettiCanvas.style.position = 'fixed';
