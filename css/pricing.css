@@ -1,5 +1,4 @@
-/* Pricing Page Styles */
-/* Removed all shared hero/footer/layout styles now in styles.css. Only keep pricing-specific card and grid styles. */
+
 .pricing {
   background: #fff;
   border-radius: 18px;
@@ -13,7 +12,6 @@
   }
 }
 
-/* Modern Pricing Card Styles */
 .pricing-grid {
   margin-top: 3.5rem;
   display: flex;

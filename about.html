@@ -110,6 +110,30 @@
                 </div>
             </div>
         </section>
+        <!-- Contact Section -->
+        <section class="contact-section" style="background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(44,83,100,0.07);padding:40px 32px;margin-bottom:40px;">
+            <h2 style="display:flex;align-items:center;font-size:2rem;gap:10px;margin-bottom:1.5rem;color:#047857;font-weight:800;"><i class="fas fa-envelope" style="color:#0072ff;margin-right:10px;"></i>Contact Us</h2>
+            <form id="contactForm" class="contact-form" style="max-width:420px;margin:0 auto;background:#f7fbff;border-radius:12px;box-shadow:0 2px 12px rgba(0,114,255,0.04);padding:32px 18px 24px 18px;">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="enterprise">Enterprise Name</label>
+                    <input type="text" id="enterprise" name="enterprise" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div id="contactRecap" class="contact-recap" style="display:none;max-width:420px;margin:32px auto 0 auto;background:#f7fbff;border-radius:12px;box-shadow:0 2px 12px rgba(0,114,255,0.04);padding:32px 18px 24px 18px;"></div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -127,5 +151,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/contact.js"></script>
 </body>
 </html> 

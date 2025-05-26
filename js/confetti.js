@@ -61,7 +61,6 @@ function launchConfetti() {
       c.x += Math.sin(frame / 15 + i) * 2;
       c.tiltAngle += c.tiltAngleIncremental;
       c.tilt = Math.sin(c.tiltAngle) * 10;
-      // Shrink confetti as it falls
       if (frame > maxFrames * 0.5) {
         c.shrink -= 0.012;
         if (c.shrink < 0) c.shrink = 0;
@@ -76,7 +75,6 @@ function launchConfetti() {
   drawConfetti();
 }
 
-// Attach confetti to all select buttons
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.select-button').forEach(btn => {
     btn.addEventListener('click', launchConfetti);

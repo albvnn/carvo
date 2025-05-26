@@ -166,7 +166,6 @@ nav a {
     color: #ffffff;
 }
 
-/* Page title */
 .page-title {
     text-align: center;
     padding: 7rem 0 3rem;
@@ -184,7 +183,6 @@ nav a {
     margin: 0 auto;
 }
 
-/* Buttons */
 .button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -204,7 +202,6 @@ nav a {
     background-color: #036c4e;
 }
 
-/* Features Section */
 .features {
     padding: 80px 0;
     background-color: #f9fafb;
@@ -266,7 +263,6 @@ nav a {
     line-height: 1.6;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .header-content, .nav-container, .footer-content {
         flex-direction: column;
@@ -297,14 +293,12 @@ nav a {
         grid-template-columns: 1fr;
     }
     
-    /* Fixed header for mobile */
     .pricing-header,
     .about-header {
         position: relative;
     }
 } 
 
-/* Logo Carousel */
 .trusted-by {
     padding: 30px 0;
     background-color: rgba(255, 255, 255, 0.9);
@@ -323,7 +317,7 @@ nav a {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 0 10px; /* Add padding for gradient overlays */
+    padding: 0 10px; 
 }
 
 .logo-carousel {
@@ -331,22 +325,19 @@ nav a {
     align-items: center;
     gap: 50px;
     padding: 0 25px;
-    width: fit-content; /* Ensure the width fits all items */
-    /* Animation properties for continuous sliding */
+    width: fit-content; 
     animation: scrollX 30s linear infinite;
 }
 
-/* Continuous scrolling animation */
 @keyframes scrollX {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Only scroll half way to loop with cloned items */
+        transform: translateX(-50%); 
     }
 }
 
-/* Pause animation on hover */
 .logo-carousel:hover {
     animation-play-state: paused;
 }
@@ -373,7 +364,6 @@ nav a {
     }
 } 
 
-/* Add these new classes for the hero page header */
 body:not(.inner-page) header {
     border-radius: 20px 20px 0 0;
     width: calc(100% - 30px);
@@ -383,7 +373,6 @@ body:not(.inner-page) header {
     top: calc(1% + 1px);
 } 
 
-/* Mobile Menu */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -403,17 +392,14 @@ body:not(.inner-page) header {
     transition: all 0.3s ease;
 }
 
-/* Update menu toggle color for inner pages */
 .inner-page .mobile-menu-toggle span {
     background-color: #333333;
 }
 
-/* Hide the checkbox but use it for state management */
 #mobile-menu-checkbox {
     display: none;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: row;
@@ -491,7 +477,6 @@ body:not(.inner-page) header {
         border-color: #047857;
     }
     
-    /* Animation for burger menu when opened */
     #mobile-menu-checkbox:checked ~ .mobile-menu-toggle span {
         background-color: #333333;
     }
@@ -509,7 +494,6 @@ body:not(.inner-page) header {
     }
 } 
 
-/* Stunning Footer Styles */
 .stunning-footer {
   display: flex;
   flex-direction: column;
@@ -574,7 +558,6 @@ body:not(.inner-page) header {
   }
 } 
 
-/* Features Page Stunning Styles */
 .features-hero.stunning-hero {
   background: linear-gradient(120deg, #10b981 0%, #047857 100%);
   padding: 64px 0 32px 0;
@@ -648,7 +631,6 @@ body:not(.inner-page) header {
   }
 } 
 
-/* Alternating Features Section Styles */
 .features-list-section-alt {
   background: #f7fbff;
   padding: 48px 0;
@@ -740,14 +722,12 @@ body.inner-page header nav a:hover {
   color: #047857 !important;
 }
 
-/* Remove obsolete header color rules for inner pages */
 header:not(.header-solid) nav a {
   color: #fff;
   font-weight: 500;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Remove .about-header and .pricing-header from about.css and pricing.css if present */
 
 body.inner-page .btn-outline {
   background-color: transparent;
