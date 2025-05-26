@@ -74,8 +74,4 @@ function launchConfetti() {
   drawConfetti();
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.select-button').forEach(btn => {
-    btn.addEventListener('click', launchConfetti);
-  });
-}); 
+window.confetti = launchConfetti; 

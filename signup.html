@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Carvo</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="signup-page">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-return"><a href="index.html" class="btn btn-outline">&larr; Return to Home</a></div>
+            <div>
+                <h2 class="auth-title">Create your account</h2>
+                <p class="auth-switch">
+                    Or
+                    <a href="login.html" class="auth-link">
+                        sign in to your existing account
+                    </a>
+                </p>
+            </div>
+            <form class="auth-form" id="signupForm">
+                <div class="auth-fields">
+                    <div class="auth-field">
+                        <label for="name" class="auth-label">Full name</label>
+                        <input id="name" name="name" type="text" required class="auth-input" placeholder="Full name">
+                    </div>
+                    <div class="auth-field">
+                        <label for="email" class="auth-label">Email address</label>
+                        <input id="email" name="email" type="email" required class="auth-input" placeholder="Email address">
+                    </div>
+                    <div class="auth-field">
+                        <label for="password" class="auth-label">Password</label>
+                        <input id="password" name="password" type="password" required class="auth-input" placeholder="Password">
+                    </div>
+                    <div class="auth-field">
+                        <label for="confirm-password" class="auth-label">Confirm password</label>
+                        <input id="confirm-password" name="confirm-password" type="password" required class="auth-input" placeholder="Confirm password">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="auth-btn">Create account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+        import authService from './js/auth.js';
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            try {
+                const user = await authService.register(email, password, name);
+                window.location.href = '/';
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+    <script type="module" src="js/auth-ui.js"></script>
+</body>
+</html> 

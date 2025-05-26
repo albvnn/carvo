@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Carvo</title>
+    <link rel="stylesheet" href="css/satoshi.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body class="inner-page">
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/carvo-logo-black.svg" alt="Carvo">
+                </a>
+            </div>
+            <input type="checkbox" id="mobile-menu-checkbox">
+            <label for="mobile-menu-checkbox" class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="cart.html" class="btn btn-primary">Cart</a>
+                    <button id="logout-btn" class="btn btn-outline">Log Out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="cart-section container">
+            <h1 class="auth-title">Your Cart</h1>
+            <div id="cart-content"></div>
+            <div class="cart-return">
+                <a href="index.html" class="btn btn-outline">&larr; Return to Home</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-content stunning-footer">
+            <div class="footer-logo-gradient">
+                <span class="carvo-gradient-text">CARVO</span>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="index.html">Home</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Carvo. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="js/confetti.js"></script>
+    <script type="module" src="js/auth-ui.js"></script>
+    <script type="module">
+        import authService from './js/auth.js';
+
+        function renderCart() {
+            const cartContent = document.getElementById('cart-content');
+            let cart = null;
+            try {
+                cart = JSON.parse(localStorage.getItem('cart'));
+            } catch (e) {}
+            if (!cart || !cart.plan) {
+                cartContent.innerHTML = '<p>Your cart is empty.</p>';
+                return;
+            }
+            cartContent.innerHTML = `
+                <div class="cart-feature-card">
+                    <h3>Selected Plan</h3>
+                    <div class="cart-plan">${cart.plan}</div>
+                    <div class="cart-actions">
+                        <button id="remove-cart" class="btn btn-outline">Remove</button>
+                        <button id="checkout-cart" class="btn btn-primary">Checkout</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('remove-cart').onclick = function() {
+                localStorage.removeItem('cart');
+                renderCart();
+            };
+            document.getElementById('checkout-cart').onclick = function() {
+                alert('Thank you for your interest! Checkout is a demo.');
+                localStorage.removeItem('cart');
+                renderCart();
+            };
+        }
+
+        if (localStorage.getItem('cartConfetti')) {
+            setTimeout(() => {
+                if (typeof window.confetti === 'function') window.confetti();
+                localStorage.removeItem('cartConfetti');
+            }, 100);
+        }
+
+        renderCart();
+
+        function attachLogoutHandler() {
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn && !logoutBtn.dataset.handlerAttached) {
+                import('./js/auth.js').then(({ default: authService }) => {
+                    logoutBtn.onclick = function() {
+                        authService.logout();
+                        window.location.href = 'index.html';
+                    };
+                    logoutBtn.dataset.handlerAttached = 'true';
+                });
+            }
+        }
+        const authButtons = document.querySelector('.auth-buttons');
+        if (authButtons) {
+            const observer = new MutationObserver(attachLogoutHandler);
+            observer.observe(authButtons, { childList: true, subtree: true });
+            attachLogoutHandler();
+        }
+    </script>
+</body>
+</html> 

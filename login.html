@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Carvo</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="login-page">
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-return"><a href="index.html" class="btn btn-outline">&larr; Return to Home</a></div>
+            <div>
+                <h2 class="auth-title">Sign in to your account</h2>
+                <p class="auth-switch">
+                    Or
+                    <a href="signup.html" class="auth-link">
+                        create a new account
+                    </a>
+                </p>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="auth-fields">
+                    <div class="auth-field">
+                        <label for="email" class="auth-label">Email address</label>
+                        <input id="email" name="email" type="email" required class="auth-input" placeholder="Email address">
+                    </div>
+                    <div class="auth-field">
+                        <label for="password" class="auth-label">Password</label>
+                        <input id="password" name="password" type="password" required class="auth-input" placeholder="Password">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="auth-btn">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+        import authService from './js/auth.js';
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            try {
+                const user = await authService.login(email, password);
+                window.location.href = '/';
+            } catch (error) {
+                alert(error.message);
+            }
+        });
+    </script>
+    <script type="module" src="js/auth-ui.js"></script>
+</body>
+</html> 
